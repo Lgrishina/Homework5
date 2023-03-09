@@ -1,20 +1,19 @@
-
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-
+//    static Cat jim;
     public static void main(String[] args) {
-        int[] newArray = {56, 25, 23, 67, 1};
-        System.out.println(Arrays.toString(newArray));
+        // создать лист котов
+        // заполнить его используя цикл и класс Рандом Хэлпер
+        // распечатать всех котов из коллекции
+        RandomHelper helper = new RandomHelper();
+        List<CatClass> cats = new ArrayList<>();
 
-        for (int out = newArray.length - 1; out >= 1; out--){  //Внешний цикл
-            for (int in = 0; in < out; in++){       //Внутренний цикл
-                if(newArray[in] > newArray[in + 1]) // Если порядок сравниваемых переменных нарушен
-                   {int d = newArray[in];      //во временную переменную помещаем первый элемент
-                    newArray[in] = newArray[in+1];       //на место первого ставим второй элемент
-                    newArray[in+1] = d;}
-                }
+        for (int i = 0; i <= 5; i++){
+            CatClass cat = helper.getRandomCat();
+            System.out.println(cat.toString());
+            cats.add(cat);
         }
-        System.out.println(Arrays.toString(newArray) + "- отсортированный массив");
     }
 }
