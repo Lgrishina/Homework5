@@ -2,18 +2,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-//    static Cat jim;
-    public static void main(String[] args) {
-        // создать лист котов
-        // заполнить его используя цикл и класс Рандом Хэлпер
-        // распечатать всех котов из коллекции
-        RandomHelper helper = new RandomHelper();
-        List<CatClass> cats = new ArrayList<>();
 
-        for (int i = 0; i <= 5; i++){
-            CatClass cat = helper.getRandomCat();
-            System.out.println(cat.toString());
-            cats.add(cat);
+    public static void main(String[] args){
+        Vet v = new Vet();
+
+Animal animals[] = new Animal[3];
+
+        animals[0] = new Cat("том", "рыжий");
+        animals[1] = new Dog("рекс", "мохнатый");
+        animals[2] = new Bear("михаил", "бурый");
+
+        for (Animal a: animals){
+            v.treatAnimal(a);
         }
+
+        for (Animal a: animals){
+            a.eat();
+            a.makeNoise();
+        }
+
     }
 }

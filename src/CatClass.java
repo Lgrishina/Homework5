@@ -5,6 +5,9 @@ public class CatClass {
     boolean isVacinated;
     String hostName;
 
+
+
+
     public CatClass(String name, int age, String sex, boolean isVacinated, String hostName) {
         validateName(name);
         this.age = age;
